@@ -1,0 +1,39 @@
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
+public class Demo  implements ItemListener
+{
+   JList l;
+   JFrame f;
+   JPane p;
+   public Demo()
+   {
+     f=new JFrame();
+       f.setTitle("Dazzz");
+   f.setSize(400,400);
+   f.setVisible(true);
+    p=new JPanel();
+     l=new JList();
+      l.addItem("Red");
+    l.addItem("Green");
+    l.addItem("Blue");
+   p.add(l);
+   f.add(p);
+   l.addItemListener(this);
+ }
+ public static void main(String args[])
+{
+   Demo d=new Demo();
+ }
+ public void itemStateChanged(ItemEvent e)
+{
+   if(e.getSelectedItem=="Red")
+     f.setBackground(Color.RED);
+   if(e.getSelectedItem=="Green")
+     f.setBackground(Color.GREEN);
+   if(e.getSelectedItem=="Blue")
+     f.setBackground(Color.BLUE);
+ }
+}       
+    
+}
